@@ -1,5 +1,3 @@
-user_input = input('Enter a password: ')
-
 def check_length(psw):
     print(f'Length: {len(psw)} characters')
     if len(psw) >= 12:
@@ -78,7 +76,13 @@ def check_strength(psw):
     elif points == 5:
         strength = 'Very strong (good job)'
     print(f'Strength: {strength}')
+    if not needed_list:
+        needed_list.append('None')
     print(f'To improve: {', '.join(needed_list)}')
 
+while True:
+    user_input = input('Enter a password (enter to exit): ')
+    if user_input == '':
+        break
+    check_strength(user_input)
 
-check_strength(user_input)
