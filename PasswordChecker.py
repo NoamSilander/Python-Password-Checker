@@ -26,6 +26,27 @@ def check_upper(psw):
     print(f'Uppercase: {verdict}')
     return upper
 
+def check_digit(psw):
+    digit  = False
+    for char in psw:
+        if char.isdigit():
+            digit = True
+    verdict = 'yes' if digit else 'no'
+    print(f'Number: {verdict}')
+    return digit
+
+def check_symbol(psw):
+    symbol  = False
+    for char in psw:
+        if not char.isalnum():
+            symbol = True
+    verdict = 'yes' if symbol else 'no'
+    print(f'Symbol: {verdict}')
+    return symbol
+
+
 check_length(user_input)
 check_lower(user_input)
 check_upper(user_input)
+check_digit(user_input)
+check_symbol(user_input)
